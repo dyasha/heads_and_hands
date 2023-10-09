@@ -19,6 +19,7 @@ class Creature:
         self.full_health = health
 
     def validate_damage(self, value) -> tuple:
+        """Валидация урона."""
         if len(value) == 2 and isinstance(value, tuple):
             if value[0] >= 1 and value[1] >= 1:
                 return sorted(value)
@@ -44,6 +45,7 @@ class Creature:
         return value
 
     def health_info(self, another=None):
+        """Инфо по текущему здоровью."""
         if another is not None:
             print(f"Здоровье {another.name} - {another.health}")
         print(f"Здоровье {self.name} - {self.health}")
@@ -90,6 +92,7 @@ class Player(Creature):
         self.heal_count = 4
 
     def heal(self):
+        """Лечение."""
         if not self.is_alive():
             return print(f"Игрок {self.name} мертв! Он не может исцеляться.")
         if self.heal_count == 0:

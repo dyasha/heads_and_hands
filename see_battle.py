@@ -3,11 +3,13 @@ from time import sleep
 
 
 class Battle:
+    """Класс просмотра боя."""
     def __init__(self, player, enemies):
         self.player = player
         self.enemies = enemies
 
     def start_battle(self):
+        """Бой."""
         print(
             f"Бой начинается! Игрок {self.player.name}"
             " вступает в бой против монстров:")
